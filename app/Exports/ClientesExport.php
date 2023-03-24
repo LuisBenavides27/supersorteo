@@ -24,6 +24,6 @@ class ClientesExport implements FromQuery
       //  auth()->user()->id;
        // return Cliente::all();
 
-        return Cliente::query()->where('sorteo_id', $this->sorteoid)->whereStatus(2)->select('cedula','name','phone','zone')->distinct();
+        return Cliente::query()->where('sorteo_id', $this->sorteoid)->whereStatus(2)->select('cedula','name','phone','zone')->orderBy('id','desc')->distinct();
     }
 }
