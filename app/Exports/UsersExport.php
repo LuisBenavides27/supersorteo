@@ -22,6 +22,6 @@ class UsersExport implements FromQuery
 
     public function query()
     { 
-        return Cliente::query()->where('grupo_id', $this->sorteoid)->whereStatus(2)->select('cedula','name','phone','zone')->orderBy('id','desc')->distinct();
+        return Cliente::query()->where('grupo_id', $this->sorteoid)->whereStatus(2)->select('id','cedula','name','phone','zone')->orderBy('id')->distinct();
     }
 }
